@@ -208,5 +208,29 @@ minikube config set memory 5942
 ```
 
 ```
+> minikube start -p aged --kubernetes-version=v1.16.1
+😄  Microsoft Windows 10 Home 10.0.19044 Build 19044 上の [aged] minikube v1.25.2
+✨  docker ドライバーが自動的に選択されました。他の選択肢: virtualbox, ssh
+👍  aged クラスター中のコントロールプレーンの aged ノードを起動しています
+🚜  ベースイメージを取得しています...
+🔥  docker container (CPUs=2, Memory=5942MB) を作成しています...
+🐳  Docker 20.10.12 で Kubernetes v1.16.1 を準備しています...
+    ▪ kubelet.housekeeping-interval=5m
+    > kubectl.sha1: 41 B / 41 B [----------------------------] 100.00% ? p/s 0s
+    > kubelet.sha1: 41 B / 41 B [----------------------------] 100.00% ? p/s 0s
+    > kubeadm.sha1: 41 B / 41 B [----------------------------] 100.00% ? p/s 0s
+    > kubeadm: 42.20 MiB / 42.20 MiB [-------------] 100.00% 16.50 MiB p/s 2.8s
+    > kubelet: 117.43 MiB / 117.43 MiB [-----------] 100.00% 23.52 MiB p/s 5.2s
+    > kubectl: 44.52 MiB / 44.52 MiB [--------------] 100.00% 8.24 MiB p/s 5.6s
+    ▪ 証明書と鍵を作成しています...
+    ▪ コントロールプレーンを起動しています...
+    ▪ RBAC のルールを設定中です...
+🔎  Kubernetes コンポーネントを検証しています...
+    ▪ gcr.io/k8s-minikube/storage-provisioner:v5 イメージを使用しています
+🌟  有効なアドオン: storage-provisioner, default-storageclass
 
+❗  C:\Program Files\Docker\Docker\resources\bin\kubectl.exe のバージョンは 1.21.3 で、Kubernetes 1.16.1 と互換性が
+ないかもしれません。
+    ▪ kubectl v1.16.1 が必要ですか？ 'minikube kubectl -- get pods -A' を試してみてください
+🏄  完了しました！ kubectl が「"aged"」クラスタと「"default"」ネームスペースを使用するよう構成されました
 ```
