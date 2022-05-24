@@ -57,3 +57,39 @@ LAST SEEN   TYPE      REASON                                             OBJECT 
 23m         Normal    NodeAllocatableEnforced                            node/minikube                          Updated Node Allocatable limit across pods
 7m58s       Warning   listen tcp4 :30067: bind: address already in use   node/minikube                          can't open port "nodePort for default/hello-minikube" (:30067/tcp4), skipping it
 ```
+
+```
+> kubectl get services
+NAME             TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+hello-minikube   NodePort    10.110.183.166   <none>        8080:30067/TCP   12m
+kubernetes       ClusterIP   10.96.0.1        <none>        443/TCP          29m
+```
+
+```
+> kubectl port-forward service/hello-minikube 7080:8080
+Forwarding from 127.0.0.1:7080 -> 8080
+Forwarding from [::1]:7080 -> 8080
+Handling connection for 7080
+Handling connection for 7080
+```
+
+```
+> curl.exe http://localhost:7080/
+CLIENT VALUES:
+client_address=127.0.0.1
+command=GET
+real path=/
+query=nil
+request_version=1.1
+request_uri=http://localhost:8080/
+
+SERVER VALUES:
+server_version=nginx: 1.10.0 - lua: 10001
+
+HEADERS RECEIVED:
+accept=*/*
+host=localhost:7080
+user-agent=curl/7.79.1
+BODY:
+-no body in request-
+```
