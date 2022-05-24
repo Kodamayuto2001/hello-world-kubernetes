@@ -2,8 +2,29 @@
 
 ```
 > minikube start
+😄  Microsoft Windows 10 Home 10.0.19044 Build 19044 上の minikube v1.25.2
+✨  docker ドライバーが自動的に選択されました。他の選択肢: virtualbox, ssh
+👍  minikube クラスター中のコントロールプレーンの minikube ノードを起動しています
+🚜  ベースイメージを取得しています...
+💾  Kubernetes v1.23.3 のダウンロードの準備をしています
+    > preloaded-images-k8s-v17-v1...: 505.68 MiB / 505.68 MiB  100.00% 28.87 Mi
+    > gcr.io/k8s-minikube/kicbase: 379.06 MiB / 379.06 MiB  100.00% 9.28 MiB p/
+🔥  docker container (CPUs=2, Memory=3500MB) を作成しています.../ E0524 23:36:30.942608   18836 kic.go:267] icacls failed applying permissions - err - [%!s(<nil>)], output - [�����t�@�C��: C:\Users\yuto2\.minikube\machines\minikube\id_rsa
+1 �̃t�@�C���������ɏ��������܂����B0 �̃t�@�C���������ł��܂����ł���]
+
+🐳  Docker 20.10.12 で Kubernetes v1.23.3 を準備しています...
+    ▪ kubelet.housekeeping-interval=5m
+    ▪ 証明書と鍵を作成しています...
+    ▪ コントロールプレーンを起動しています...
+    ▪ RBAC のルールを設定中です...
+🔎  Kubernetes コンポーネントを検証しています...
+    ▪ gcr.io/k8s-minikube/storage-provisioner:v5 イメージを使用しています
+🌟  有効なアドオン: storage-provisioner, default-storageclass
+
+❗  C:\Program Files\Docker\Docker\resources\bin\kubectl.exe のバージョンは 1.21.3 で、Kubernetes 1.23.3 と互換性が ないかもしれません。
+    ▪ kubectl v1.23.3 が必要ですか？ 'minikube kubectl -- get pods -A' を試してみてください
+🏄  完了しました！ kubectl が「"minikube"」クラスタと「"default"」ネームスペースを使用するよう構成されました
 ```
-![image](https://user-images.githubusercontent.com/55943803/170063593-6c56e2aa-df08-4be2-bed9-35b2dd349ad6.png)
 
 
 ```
@@ -107,4 +128,29 @@ BODY:
 > kubectl get services balanced
 NAME       TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
 balanced   LoadBalancer   10.97.22.208   127.0.0.1     8080:32332/TCP   39s
+```
+
+```
+> minikube pause
+⏸️  minikube ノードを一時停止しています ...
+⏯️  kube-system, kubernetes-dashboard, storage-gluster, istio-operator に存在する 18 個のコンテナーを一時停止しまし
+た
+```
+
+```
+minikube unpause
+⏸️  minikube ノードを再稼働させています ...
+⏸️  次のネームスペースに存在する 18 個のコンテナーを再稼働させました: kube-system, kubernetes-dashboard, storage-gluster, istio-operator
+```
+
+```
+> minikube stop
+✋  「minikube」ノードを停止しています...
+🛑  SSH 経由で「minikube」の電源をオフにしています...
+🛑  1 台のノードが停止しました。
+```
+
+```
+> minikube config set memory 16384
+❗  これらの変更は minikube delete の後に minikube start を実行すると反映されます
 ```
