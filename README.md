@@ -154,3 +154,59 @@ minikube unpause
 > minikube config set memory 16384
 ❗  これらの変更は minikube delete の後に minikube start を実行すると反映されます
 ```
+
+```
+> minikube addons list
+|-----------------------------|----------|--------------|--------------------------------|
+|         ADDON NAME          | PROFILE  |    STATUS    |           MAINTAINER           |
+|-----------------------------|----------|--------------|--------------------------------|
+| ambassador                  | minikube | disabled     | third-party (ambassador)       |
+| auto-pause                  | minikube | disabled     | google                         |
+| csi-hostpath-driver         | minikube | disabled     | kubernetes                     |
+| dashboard                   | minikube | enabled ✅   | kubernetes                     |
+| default-storageclass        | minikube | enabled ✅   | kubernetes                     |
+| efk                         | minikube | disabled     | third-party (elastic)          |
+| freshpod                    | minikube | disabled     | google                         |
+| gcp-auth                    | minikube | disabled     | google                         |
+| gvisor                      | minikube | disabled     | google                         |
+| helm-tiller                 | minikube | disabled     | third-party (helm)             |
+| ingress                     | minikube | disabled     | unknown (third-party)          |
+| ingress-dns                 | minikube | disabled     | google                         |
+| istio                       | minikube | disabled     | third-party (istio)            |
+| istio-provisioner           | minikube | disabled     | third-party (istio)            |
+| kong                        | minikube | disabled     | third-party (Kong HQ)          |
+| kubevirt                    | minikube | disabled     | third-party (kubevirt)         |
+| logviewer                   | minikube | disabled     | unknown (third-party)          |
+| metallb                     | minikube | disabled     | third-party (metallb)          |
+| metrics-server              | minikube | disabled     | kubernetes                     |
+| nvidia-driver-installer     | minikube | disabled     | google                         |
+| nvidia-gpu-device-plugin    | minikube | disabled     | third-party (nvidia)           |
+| olm                         | minikube | disabled     | third-party (operator          |
+|                             |          |              | framework)                     |
+| pod-security-policy         | minikube | disabled     | unknown (third-party)          |
+| portainer                   | minikube | disabled     | portainer.io                   |
+| registry                    | minikube | disabled     | google                         |
+| registry-aliases            | minikube | disabled     | unknown (third-party)          |
+| registry-creds              | minikube | disabled     | third-party (upmc enterprises) |
+| storage-provisioner         | minikube | enabled ✅   | google                         |
+| storage-provisioner-gluster | minikube | disabled     | unknown (third-party)          |
+| volumesnapshots             | minikube | disabled     | kubernetes                     |
+|-----------------------------|----------|--------------|--------------------------------|
+```
+
+```
+> minikube start -p aged --kubernetes-version=v1.16.1
+😄  Microsoft Windows 10 Home 10.0.19044 Build 19044 上の [aged] minikube v1.25.2
+✨  docker ドライバーが自動的に選択されました。他の選択肢: virtualbox, ssh
+
+❌  MK_USAGE が原因で終了します: Docker Desktop は 5942MB のメモリーしか使用できませんが、16384MB のメモリー使用を指定されました
+```
+
+```
+minikube config set memory 5942
+❗  これらの変更は minikube delete の後に minikube start を実行すると反映されます
+```
+
+```
+
+```
