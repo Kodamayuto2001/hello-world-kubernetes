@@ -93,3 +93,18 @@ user-agent=curl/7.79.1
 BODY:
 -no body in request-
 ```
+
+```
+> minikube tunnel
+✅  Tunnel successfully started
+
+📌  注意: トンネルにアクセスするにはこのプロセスが存続しなければならないため、このターミナルはクローズしないでください ...
+
+🏃  balanced サービス用のトンネルを起動しています。
+```
+
+```
+> kubectl get services balanced
+NAME       TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+balanced   LoadBalancer   10.97.22.208   127.0.0.1     8080:32332/TCP   39s
+```
